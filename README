@@ -1,0 +1,149 @@
+=====================================================================
+    Human Perceptual Assessment Data on ASVspoof2019 LA Database
+=====================================================================
+
+Authors:
+Xin Wang(1), Junichi Yamagishi(1), Massimiliano Todisco(2), 
+Hector Delgado(2), Andreas Nautsch(2), Nicholas Evans(2), 
+Md Sahidullah(3), Ville Vestman(4), Tomi Kinnunen(4), Kong Aik Lee(5), 
+Affiliations:
+(1)National Institute of Informatics, Japan 
+(2)EURECOM, France
+(3)Universite de Lorraine, CNRS, Inria, France
+(4)University of Eastern Finland, Finland
+(5)NEC Corp., 7-1, Japan
+
+========================== Introduction ===================================
+
+Automatic speaker verification (ASV) is one of the most natural and convenient means of biometric person recognition. Unfortunately, just like all other biometric systems, ASV is vulnerable to spoofing, also referred to as  ``presentation attacks.'' These vulnerabilities are generally unacceptable and call for spoofing countermeasures or ``presentation attack detection'' systems. In addition to impersonation, ASV systems are vulnerable to replay, speech synthesis, and voice conversion attacks.
+
+The ASVspoof challenge initiative was created to foster research on anti-spoofing and to provide common platforms for the assessment and comparison of spoofing countermeasures. The first edition, ASVspoof 2015, focused upon the study of countermeasures for detecting of text-to-speech synthesis (TTS) and voice conversion (VC) attacks.  The second edition, ASVspoof 2017, focused instead upon replay spoofing attacks and countermeasures. The ASVspoof 2019 edition is the first to consider all three spoofing attack types within a single challenge.  While they originate from the same source database and same underlying protocol, they are explored in two specific use case scenarios. Spoofing attacks within a logical access (LA) scenario are generated with the latest speech synthesis and voice conversion technologies, including state-of-the-art neural acoustic and waveform model techniques. Replay spoofing attacks within a physical access (PA) scenario are generated through carefully controlled simulations that support much more revealing analysis than possible previously. 
+
+In the ASVspoof2019 database paper, we have described a human assessment on spoofed data in logical access. It was demonstrated that the spoofing data in the ASVspoof 2019 database have varied degrees of perceived quality and similarity to the target speakers, including spoofed data that cannot be differentiated from bona fide utterances even by human subjects. 
+
+In this repository, we replease the human assessment results data on the ASVspoof2019 database LA scenario. It is expected that the ASVspoof 2019 database, with its varied coverage of different types of spoofing data, could further foster research on anti-spoofing.
+
+
+If your publish using any of the data in this dataset please cite the following papers:
+
+@article{WANG2020101114,
+ author = {Wang, Xin and Yamagishi, Junichi and Todisco, Massimiliano and Delgado, H{\'{e}}ctor and Nautsch, Andreas and Evans, Nicholas and Sahidullah, Md and Vestman, Ville and Kinnunen, Tomi and Lee, Kong Aik and Juvela, Lauri and Alku, Paavo and Peng, Yu-Huai and Hwang, Hsin-Te and Tsao, Yu and Wang, Hsin-Min and Maguer, S{\'{e}}bastien Le and Becker, Markus and Henderson, Fergus and Clark, Rob and Zhang, Yu and Wang, Quan and Jia, Ye and Onuma, Kai and Mushika, Koji and Kaneda, Takashi and Jiang, Yuan and Liu, Li-Juan and Wu, Yi-Chiao and Huang, Wen-Chin and Toda, Tomoki and Tanaka, Kou and Kameoka, Hirokazu and Steiner, Ingmar and Matrouf, Driss and Bonastre, Jean-Fran{\c{c}}ois and Govender, Avashna and Ronanki, Srikanth and Zhang, Jing-Xuan and Ling, Zhen-Hua},
+ doi = {https://doi.org/10.1016/j.csl.2020.101114},
+ issn = {0885-2308},
+ journal = {Computer Speech {\&} Language},
+ keywords = {ASVspoof challenge,Anti-spoofing,Automatic speaker verification,Biometrics,Countermeasure,Media forensics,Presentation attack,Presentation attack detection,Replay,Text-to-speech synthesis,Voice conversion},
+ pages = {101114},
+ title = {{ASVspoof 2019: a large-scale public database of synthesized, converted and replayed speech}},
+ url = {http://www.sciencedirect.com/science/article/pii/S0885230820300474},
+ year = {2020}
+}
+
+@inproceedings{Todisco2019,
+ author = {Todisco, Massimiliano and Wang, Xin and Vestman, Ville and Sahidullah, Md. and Delgado, H{\'{e}}ctor and Nautsch, Andreas and Yamagishi, Junichi and Evans, Nicholas and Kinnunen, Tomi H and Lee, Kong Aik},
+ booktitle = {Proc. Interspeech},
+ doi = {10.21437/Interspeech.2019-2249},
+ pages = {1008--1012},
+ title = {{ASVspoof 2019: future horizons in spoofed and fake audio detection}},
+ url = {http://dx.doi.org/10.21437/Interspeech.2019-2249},
+ year = {2019}
+}
+
+
+============================ Notice  ======================================
+
+This repository only releases the assessment results and related meta information.
+
+Waveform files used in the human assessment can be downloaded here
+https://datashare.is.ed.ac.uk/handle/10283/3336
+
+Pre-process was not conducted except converting the waveform from FLAG format
+to WAV using sox (http://sox.sourceforge.net/sox.html) command:
+sox FILE1.flac FILE2.wav
+
+The list of waveform files are in ./wav_file_sample_A.txt and ./wav_file_sample_B.txt.
+Files in ./wav_file_sample_A.txt were evaluated in quality and similarity assessment.
+Files in ./wav_file_sample_B.txt were used as reference in the similarity assessment.
+Please read doc-experiment-details.pdf or the paper https://doi.org/10.1016/j.csl.2020.101114
+for more information on the design of experiments.
+
+======================== Data Structure  ==================================
+
+This repository contains the following files
+1. score_quality.csv: a CSV table for the quality assessment scores
+2. score_similarity.csv: a CSV table for the similarity assessment scores
+3. listener_info.csv: a CSV table for information of (anonymized) listeners
+4. wav_file_sample_A.txt: a list of waveform files evaluated in the quality and similarity assessment
+5. wav_file_sample_B.txt: a list of waveform files used as reference in similarity assessment
+6. doc-experiment-details.pdf: a PDF file explaining the experiment design and details.
+
+
+Below we explain the CSV files with examples:
+
+==== score_quality.csv ====
+The first 4 rows of this file are
+> category,category,speaker_in_sample_A,sample_A_ID,quality,listener_ID
+> bonafide,non-target,LA_0054,LA_E_3569893.wav,5,L126ADAB65B
+> spoofed,A07,LA_0028,LA_E_7151962.wav,5,L126ADAB65B
+> bonafide,target,LA_0040,LA_E_1458883.wav,6,L126ADAB65B
+
+1st column: "bona fide" or "spoofed"
+2nd column: if bona fide, either "target" or "non-target" spoofing speech
+            if spoofed, ID of the spoofing system (A07, A08, ..., A19)
+3rd column: speaker ID of the sample
+4th column: sample ID
+5th column: quality score
+6th column: listener ID (who rated the score)
+
+
+==== score_similarity.csv ====
+The first 4 rows of this file are:
+> category,category,speaker_in_sample_B,sample_B_ID,speaker_sample_A,sample_A_ID,similarity,listener_ID
+> bonafide,non-target,LA_0007,LA_E_A9569588.wav,LA_0054,LA_E_3569893.wav,1,L126ADAB65B
+> spoofed,A07,LA_0028,LA_E_A2453228.wav,LA_0028,LA_E_7151962.wav,6,L126ADAB65B
+> bonafide,target,LA_0040,LA_E_A9618678.wav,LA_0040,LA_E_1458883.wav,4,L126ADAB65B
+
+1st column: "bona fide" or "spoofed"
+2nd column: if bona fide, either "target" or "non-target" spoofing speech
+            if spoofed, ID of the spoofing system (A07, A08, ..., A19)
+3rd column: speaker ID of the sample B 
+4th column: ID of sample B
+5th column: speaker ID of the sample A
+6th column: ID of sample A
+7th column: similarity score
+8th column: listener ID (who rated the score)
+
+
+==== listener_info.csv ==== 
+The first 4 rows of this file are
+> L000ED7D8E6,30-39,female,1
+> L00FC812908,40-49,female,2
+> L010DBADAD5,30-39,female,2
+
+1st column: listener ID
+2nd column: age range
+3rd column: gender
+4th column: how many sets did the listener evaluate
+
+
+
+============================== COPYING ================================
+
+This repository is made available under Creative Commons Attribution License (CC-BY). 
+
+Regarding Creative Commons License: Attribution 4.0 International (CC BY 4.0), 
+please see https://creativecommons.org/licenses/by/4.0/
+
+THIS DATABASE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
+OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ARISING IN ANY WAY OUT OF THE USE OF THIS DATABASE, EVEN IF ADVISED OF THE 
+POSSIBILITY OF SUCH DAMAGE
+
+
+====================== ACKNOWLEDGEMENTS ================================
+The work was partially supported by JST CREST Grant No. JPMJCR18A6 (VoicePersonae project), Japan, MEXT KAKENHI Grant Nos. (16H06302, 16K16096, 17H04687, 18H04120, 18H04112, 18KT0051), Japan, the VoicePersonae and RESPECT projects funded by the French Agence Nationale de la Recherche~(ANR), the Academy of Finland (NOTCH project no. 309629), and Region Grand Est, France. entitled ``NOTCH: NOn-cooperaTive speaker CHaracterization''). The authors at the University of Eastern Finland also gratefully acknowledge the use of the computational infrastructures at CSC -- the IT Center for Science, and the support of the NVIDIA Corporation the donation of a Titan V GPU used in this research. The numerical calculations of some of the spoofed data were carried out on the TSUBAME3.0 supercomputer at the Tokyo Institute of Technology. The work is also partially supported by Region Grand Est, France. The ADAPT centre (13/RC/2106) is funded by the Science Foundation Ireland (SFI).
