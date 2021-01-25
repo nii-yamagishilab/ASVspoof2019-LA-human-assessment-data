@@ -5,13 +5,14 @@
 Authors:
 Xin Wang(1), Junichi Yamagishi(1), Massimiliano Todisco(2), 
 Hector Delgado(2), Andreas Nautsch(2), Nicholas Evans(2), 
-Md Sahidullah(3), Ville Vestman(4), Tomi Kinnunen(4), Kong Aik Lee(5), 
-Affiliations:
+Md Sahidullah(3), Ville Vestman(4), Tomi Kinnunen(4), Kong Aik Lee(5)
+
+Affiliations (by the time of data collection):
 (1)National Institute of Informatics, Japan 
 (2)EURECOM, France
 (3)Universite de Lorraine, CNRS, Inria, France
 (4)University of Eastern Finland, Finland
-(5)NEC Corp., 7-1, Japan
+(5)NEC Corp., Japan
 
 ========================== Introduction ===================================
 
@@ -21,7 +22,7 @@ The ASVspoof challenge initiative was created to foster research on anti-spoofin
 
 In the ASVspoof2019 database paper, we have described a human assessment on spoofed data in logical access. It was demonstrated that the spoofing data in the ASVspoof 2019 database have varied degrees of perceived quality and similarity to the target speakers, including spoofed data that cannot be differentiated from bona fide utterances even by human subjects. 
 
-In this repository, we replease the human assessment results data on the ASVspoof2019 database LA scenario. It is expected that the ASVspoof 2019 database, with its varied coverage of different types of spoofing data, could further foster research on anti-spoofing.
+In this repository, we release the human assessment results data on the ASVspoof2019 database LA scenario. It is expected that the ASVspoof 2019 database, with its varied coverage of different types of spoofing data, could further foster research on anti-spoofing.
 
 
 If your publish using any of the data in this dataset please cite the following papers:
@@ -58,7 +59,7 @@ https://datashare.is.ed.ac.uk/handle/10283/3336
 
 Pre-process was not conducted except converting the waveform from FLAG format
 to WAV using sox (http://sox.sourceforge.net/sox.html) command:
-sox FILE1.flac FILE2.wav
+sox FILE_NAME.flac FILE_NAME.wav
 
 The list of waveform files are in ./wav_file_sample_A.txt and ./wav_file_sample_B.txt.
 Files in ./wav_file_sample_A.txt were evaluated in quality and similarity assessment.
@@ -146,4 +147,4 @@ POSSIBILITY OF SUCH DAMAGE
 
 
 ====================== ACKNOWLEDGEMENTS ================================
-The work was partially supported by JST CREST Grant No. JPMJCR18A6 (VoicePersonae project), Japan, MEXT KAKENHI Grant Nos. (16H06302, 16K16096, 17H04687, 18H04120, 18H04112, 18KT0051), Japan, the VoicePersonae and RESPECT projects funded by the French Agence Nationale de la Recherche~(ANR), the Academy of Finland (NOTCH project no. 309629), and Region Grand Est, France. entitled ``NOTCH: NOn-cooperaTive speaker CHaracterization''). The authors at the University of Eastern Finland also gratefully acknowledge the use of the computational infrastructures at CSC -- the IT Center for Science, and the support of the NVIDIA Corporation the donation of a Titan V GPU used in this research. The numerical calculations of some of the spoofed data were carried out on the TSUBAME3.0 supercomputer at the Tokyo Institute of Technology. The work is also partially supported by Region Grand Est, France. The ADAPT centre (13/RC/2106) is funded by the Science Foundation Ireland (SFI).
+The work was partially supported by JST CREST Grant No. JPMJCR18A6 (VoicePersonae project), Japan, MEXT KAKENHI Grant Nos. (16H06302, 16K16096, 17H04687, 18H04120, 18H04112, 18KT0051), Japan, the VoicePer- sonae and RESPECT projects funded by the French Agence Nationale de la Recherche (ANR), the Academy of Finland (NOTCH project no. 309629 entitled NOTCH: NOn-cooperaTive speaker CHaracterization). The authors at the University of Eastern Finland also gratefully acknowledge the use of the computational infrastructures at CSC - the IT Center for Science, and the support of the NVIDIA Corporation the donation of a Titan V GPU used in this research. The numerical calculations of some of the spoofed data were carried out on the TSUBAME3.0 supercomputer at the Tokyo Institute of Technology. The work is also partially supported by Region Grand Est, France. The ADAPT centre (13/RC/2106) is funded by the Science Foundation Ireland (SFI).
