@@ -62,8 +62,12 @@ to WAV using sox (http://sox.sourceforge.net/sox.html) command:
 sox FILE_NAME.flac FILE_NAME.wav
 
 The list of waveform files are in ./wav_file_sample_A.txt and ./wav_file_sample_B.txt.
-Files in ./wav_file_sample_A.txt were evaluated in quality and similarity assessment.
+Files in ./wav_file_sample_A.txt were evaluated in both quality and similarity assessment.
 Files in ./wav_file_sample_B.txt were used as reference in the similarity assessment.
+We used the enrollment data from the ASVspoof2019 database as the reference (sample B) in the similarity assessment.
+The scores from the similarity assessment measure how sample A sounds like sample B.
+The scores from the quality assessment measure how natural sample A is. 
+
 Please read doc-experiment-details.pdf or the paper https://doi.org/10.1016/j.csl.2020.101114
 for more information on the design of experiments.
 
